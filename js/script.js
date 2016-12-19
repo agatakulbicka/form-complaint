@@ -26,33 +26,31 @@ $(document).ready(function () {
     })
 });
 
+
+//setting dates in calendar - START
+var setDate = function (date, minMaxValue) {
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    if (day < 10) {
+        day = '0' + day
+    }
+    if (month < 10) {
+        month = '0' + month
+    }
+
+    date = year + '-' + month + '-' + day;
+    document.getElementById("date-of-purchase").setAttribute(minMaxValue, date);
+}
+
 var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1;
-var yyyy = today.getFullYear();
-if (dd < 10) {
-    dd = '0' + dd
-}
-if (mm < 10) {
-    mm = '0' + mm
-}
 
-today = yyyy + '-' + mm + '-' + dd;
-document.getElementById("date-of-purchase").setAttribute("max", today);
-
-var fromTodayToComplaints = new Date();
+//need to get date the year before from now
+var dateToCompare = new Date();
 var daysForComplaints = 365;
-var dayTheyearBeforeFromNow = new Date(fromTodayToComplaints.setDate(fromTodayToComplaints.getDate() - daysForComplaints));
+var theYearBefore = new Date(dateToCompare.setDate(dateToCompare.getDate() - daysForComplaints));
 
-var ddYearBefore = dayTheyearBeforeFromNow.getDate();
-var mmYearBefore = dayTheyearBeforeFromNow.getMonth() + 1;
-var yyyyYearBefore = dayTheyearBeforeFromNow.getFullYear();
-if (ddYearBefore < 10) {
-    ddYearBefore = '0' + ddYearBefore
-}
-if (mmYearBefore < 10) {
-    mmYearBefore = '0' + mmYearBefore
-}
-dayTheyearBeforeFromNow = yyyyYearBefore + '-' + mmYearBefore + '-' + ddYearBefore;
-document.getElementById("date-of-purchase").setAttribute("min", dayTheyearBeforeFromNow);
+setDate(today, 'max');
+setDate(theYearBefore, 'min');
 
+//setting dates in calendar - END
