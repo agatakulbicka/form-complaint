@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
 <div class="container">
     <div class="row">
         <h1>Formularz do składania reklamacji</h1>
@@ -26,9 +27,10 @@
             <div class="form-group col-xs-12" id="group-date-of-purchase">
                 <label for="date-of-purchase">Data zakupu:</label>
                 <input class="form-control" type="date" value="" id="date-of-purchase"
-                        min="2008-01-01"
+                       min="2008-01-01"
                 >
-                <small id="dateHelp" class="form-text text-muted">Pamiętaj, że możesz reklamować produkty zakupione maksymalnie rok temu!
+                <small id="dateHelp" class="form-text text-muted">Pamiętaj, że możesz reklamować produkty zakupione
+                    maksymalnie rok temu!
                 </small>
             </div>
 
@@ -56,8 +58,11 @@
             <div class="form-group col-xs-12">
                 <label for="product-description">Opis wady:</label>
                 <input class="form-control" type="text" value="np. Towar niezgodny z opisem na opakowaniu..."
-                       id="product-description">
+                       id="product-description" minlength="200" maxlength="1000">
             </div>
+            <small id="descriptionHelp" class="form-text text-muted">Masz do dyspozycji minimum 200, a maksimum 1000
+                znaków.
+            </small>
         </div>
 
         <div class="row container ">
@@ -82,14 +87,17 @@
                     </div>
                     <div class="form-group col-xs-12">
                         <label for="client-address-city-code">Kod pocztowy:</label>
-                        <input class="form-control" type="text" value="np.90-459"
-                               id="client-address-city-code">
-                    </div>
+                        <input class="form-control" type="text" placeholder="09-999"
+                               id="client-address-city-code"
+                               pattern="[0-9]{2}-[0-9]{3}"
+                               minlength="6" maxlength="6"
 
+                        >
+                    </div>
                     <div class="form-group col-xs-12">
-                        <label for="client-address-city-city">Miejscowość:</label>
+                        <label for="client-address-city">Miejscowość:</label>
                         <input class="form-control" type="text" value="np.Szczecin"
-                               id="client-address-city-city">
+                               id="client-address-city">
                     </div>
                 </div>
 
@@ -137,7 +145,7 @@
                         TEXT TEXT
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-secondary" data-dismiss="modal">Close</input>
                     </div>
                 </div>
             </div>

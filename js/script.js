@@ -41,7 +41,7 @@ var setDate = function (date, minMaxValue) {
 
     date = year + '-' + month + '-' + day;
     document.getElementById("date-of-purchase").setAttribute(minMaxValue, date);
-}
+};
 
 var today = new Date();
 
