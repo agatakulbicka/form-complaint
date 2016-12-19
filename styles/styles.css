@@ -1,0 +1,18 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: black; }
+
+h1 {
+  text-align: center; }
+
+label {
+  font-weight: bold;
+  color: #449d44; }
+
+#modal-window {
+  cursor: pointer;
+  color: #449d44; }
+  #modal-window:hover {
+    color: rgba(68, 157, 68, 0.7); }
+
+/*# sourceMappingURL=styles.css.map */

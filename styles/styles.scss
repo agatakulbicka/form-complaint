@@ -1,0 +1,28 @@
+$main-font: Helvetica, sans-serif;
+$main-font-color: black;
+$green-font: #449d44;
+$hover-link-color: rgba(68, 157, 68, 0.7);
+
+body {
+  font: 100% $main-font;
+  color: $main-font-color;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  color: $green-font;
+}
+
+#modal-window {
+  cursor: pointer;
+  color: $green-font;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+}
+
