@@ -18,16 +18,19 @@
 
         <div>
             <h3>Dane zakupioengo towaru:</h3>
-            <div class="form-group col-xs-12">
+            <div class="form-group col-xs-12" id="group-product-name">
                 <label for="product-name">Nazwa reklamowanego towaru:</label>
-                <input class="form-control" type="text" value="np. Obuwie sportowe..." id="product-name">
+                <input class="form-control" type="text" value="" placeholder="np. Obuwie sportowe" id="product-name">
             </div>
 
-            <div class="form-group col-xs-12">
+            <div class="form-group col-xs-12" id="group-date-of-purchase">
                 <label for="date-of-purchase">Data zakupu:</label>
-                <input class="form-control" type="date" value="" id="date-of-purchase">
+                <input class="form-control" type="date" value="" id="date-of-purchase"
+                        min="2008-01-01"
+                >
+                <small id="dateHelp" class="form-text text-muted">Pamiętaj, że możesz reklamować produkty zakupione maksymalnie rok temu!
+                </small>
             </div>
-
 
             <div class="form-group col-xs-12">
                 <label for="city-of-purchase">Miasto:</label>
@@ -153,5 +156,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
         integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
         crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
