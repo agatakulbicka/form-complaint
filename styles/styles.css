@@ -66,6 +66,7 @@ label {
   width: 60%;
   margin: 0 auto;
   z-index: 100;
-  display: none; }
+  display: none;
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */

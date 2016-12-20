@@ -144,7 +144,6 @@ $(document).ready(function () {
 
     function successCallback(json) {
         var $alert = $('#alert');
-        console.log('api success', json);
         if (json.success) {
             if (json.results[0].language_code === "pl") {
                 $alert.addClass('alert-success').text('Dziękujemy za poprawne wprowadzdenie opisu wady!')
@@ -175,7 +174,10 @@ $(document).ready(function () {
     }
 
     function errorCallback(error) {
-        console.log('api error', error);
+        $('#alert').addClass('alert-danger').text('Wystąpił błąd połączenia (' + error.status + '). Skontaktuj się z administarorem strony.')
+            .fadeIn('slow', function () {
+                $(this).delay(5000).fadeOut('slow');
+            });
     }
 
     $('#product-description').blur(function () {

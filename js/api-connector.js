@@ -9,14 +9,6 @@ apiConnector = {
             type: 'GET',
             success: successCallback,
             error: errorCallback
-
-            // success: function(json) {
-            //
-            //     // Access and use your preferred validation result objects
-            //     console.log(json.success);
-
-            //}
         });
     }
-
-}
+};
