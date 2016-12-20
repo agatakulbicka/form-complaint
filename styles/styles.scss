@@ -2,6 +2,7 @@ $main-font: Helvetica, sans-serif;
 $main-font-color: black;
 $green-font: #449d44;
 $hover-link-color: rgba(68, 157, 68, 0.7);
+$red-alert: red;
 
 body {
   font: 100% $main-font;
@@ -31,4 +32,48 @@ label {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+}
+
+.controls {
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 38px;
+  outline: none;
+  color: white;
+}
+
+#autocomplete {
+  background-color: #fff;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#autocomplete:focus {
+  border-color: #4d90fe;
+}
+
+
+#type-selector {
+  color: #fff;
+  background-color: #449d44;
+  padding: 5px 11px 0px 11px;
+
+  label {
+    font-size: 17px;
+    font-weight: 300;
+    color:white;
+
+  }
+}
+
+#map-alerts {
+display: none;
+  color: $red-alert;
 }
