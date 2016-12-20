@@ -158,6 +158,20 @@ $(document).ready(function () {
                     });
             }
         }
+        else {
+            if (json.error.code === 210) {
+                $alert.addClass('alert-warning').text('Musisz wpisać jakiś tekst w polu "opis wady", żebyśmy mogli go zweryfikować.')
+                    .fadeIn('slow', function () {
+                        $(this).delay(5000).fadeOut('slow');
+                    });
+            }
+            else {
+                $alert.addClass('alert-warning').text('Wystąpił problem z weryfikacją Twojego tekstu. Spróbuj ponownie później.')
+                    .fadeIn('slow', function () {
+                        $(this).delay(5000).fadeOut('slow');
+                    });
+            }
+        }
     }
 
     function errorCallback(error) {
