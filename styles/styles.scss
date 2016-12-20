@@ -89,3 +89,12 @@ display: none;
     font-weight: normal;
   }
 }
+
+#alert {
+  position: fixed;
+  top: 5px;
+  width: 60%;
+  margin: 0 auto;
+  z-index: 100;
+  display:none;
+}

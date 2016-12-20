@@ -138,6 +138,39 @@ $(document).ready(function () {
 
 // images - END
 
+
+//connect with languagelayer - START
+
+
+    function successCallback(json) {
+        var $alert = $('#alert');
+        console.log('api success', json);
+        if (json.success) {
+            if (json.results[0].language_code === "pl") {
+                $alert.addClass('alert-success').text('Dziękujemy za poprawne wprowadzdenie opisu wady!')
+                    .fadeIn('slow', function () {
+                        $(this).delay(5000).fadeOut('slow');
+                    });
+            } else {
+                $alert.addClass('alert-info').text('Prosimy o wypełnienie tego formualrza w języku polskim.')
+                    .fadeIn('slow', function () {
+                        $(this).delay(5000).fadeOut('slow');
+                    });
+            }
+        }
+    }
+
+    function errorCallback(error) {
+        console.log('api error', error);
+    }
+
+    $('#product-description').blur(function () {
+        var query = $('#product-description').val();
+        apiConnector.getLanguage(successCallback, errorCallback, query);
+    });
+
+//connect with languagelayer - END
+
 });
 
 //setting dates in calendar - START
