@@ -51,27 +51,33 @@
                     <label for="photo-of-product1">Dodaj zdjęcie wadliwego produktu:</label>
                     <input type="file" class="form-control-file input-photo"
                            id="photo-of-product1" aria-describedby="fileHelp1">
-                    <small id="fileHelp1" class="form-text text-muted small-description">Zdjęcie powinno przedstawiać wadę zakupionego
+                    <small id="fileHelp1" class="form-text text-muted small-description">Zdjęcie powinno przedstawiać
+                        wadę zakupionego
                         produktu,
-                        która to wada ma być podstawą reklamacji. Nie powinno przekraczać wielkości 1024 x 683 px i ma format jpg/jpeg.
+                        która to wada ma być podstawą reklamacji. Nie powinno przekraczać wielkości 1024 x 683 px i ma
+                        format jpg/jpeg.
                     </small>
                     <img id="loadedImage1" class="loaded-image"/>
                 </div>
                 <div id="photo-load2" class="form-group photo-group">
                     <label for="photo-of-product2">Możesz dodać kolejne zdjęcie:</label>
                     <input type="file" class="form-control-file" id="photo-of-product2" aria-describedby="fileHelp2">
-                    <small id="fileHelp2" class="form-text text-muted small-description">Zdjęcie powinno przedstawiać wadę zakupionego
+                    <small id="fileHelp2" class="form-text text-muted small-description">Zdjęcie powinno przedstawiać
+                        wadę zakupionego
                         produktu,
-                        która to wada ma być podstawą reklamacji. Nie powinno przekraczać wielkości 1024 x 683 px i ma format jpg/jpeg.
+                        która to wada ma być podstawą reklamacji. Nie powinno przekraczać wielkości 1024 x 683 px i ma
+                        format jpg/jpeg.
                     </small>
                     <img id="loadedImage2" class="loaded-image"/>
                 </div>
                 <div id="photo-load3" class="form-group photo-group">
                     <label for="photo-of-product2">Możesz dodać kolejne zdjęcie:</label>
                     <input type="file" class="form-control-file" id="photo-of-product3" aria-describedby="fileHelp3">
-                    <small id="fileHelp3" class="form-text text-muted small-description">Zdjęcie powinno przedstawiać wadę zakupionego
+                    <small id="fileHelp3" class="form-text text-muted small-description">Zdjęcie powinno przedstawiać
+                        wadę zakupionego
                         produktu,
-                        która to wada ma być podstawą reklamacji. Nie powinno przekraczać wielkości 1024 x 683 px i ma format jpg/jpeg.
+                        która to wada ma być podstawą reklamacji. Nie powinno przekraczać wielkości 1024 x 683 px i ma
+                        format jpg/jpeg.
                     </small>
                     <img id="loadedImage3" class="loaded-image"/>
                 </div>
@@ -117,7 +123,6 @@
                             <input class="form-control" type="text" value=""
                                    placeholder="Ziemniaczana13/15, 99-999 Gdańsk" id="companyAddress">
                         </div>
-
                     </div>
 
                 </div>
@@ -135,11 +140,8 @@
                         <input class="form-control" type="text" value="" placeholder="http://strona.pl"
                                id="companyWebsite">
                     </div>
-
                 </div>
             </div>
-
-
         </div>
 
         <div class="row container ">
@@ -196,6 +198,38 @@
                            placeholder="np. jankowalski@email.pl"
                            id="client-email">
                 </div>
+
+                <div class="form-group col-xs-12">
+                    <label for="form-of-compnsation">Preferowana forma rekompensaty</label>
+                    <select class="form-control" id="form-of-compnsation">
+                        <option>Nowy produkt</option>
+                        <option>Naprawa wadliwego produktu</option>
+                        <option>Zwrot gotówki</option>
+                    </select>
+                </div>
+
+
+                <fieldset class="form-group col-xs-12">
+                    <label>Preferowana forma kontaktu:</label>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1">
+                           telefoniczny
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                           mailowy
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" checked>
+                            pocztowy
+                        </label>
+                    </div>
+                </fieldset>
             </div>
         </div>
 
@@ -211,8 +245,6 @@
             <input class="form-control btn btn-success btn-lg lets-animate" type="submit" value="Wyślij formularz"
                    id="submit-form" disabled>
         </div>
-
-
 
 
         <!-- Modal -->
