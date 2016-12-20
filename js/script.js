@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //green-red validation
+    //green-red validation - START
     $('.form-control').focusout(function () {
         if ($(this).val().length < 2) {
             $(this).addClass('form-control-danger').attr("placeholder", "Musisz uzupełnić to pole!");
@@ -10,6 +10,20 @@ $(document).ready(function () {
             $(this).removeClass('form-control-danger').addClass('form-control-success');
         }
     });
+
+    $('#submit-form').on('click', function () {
+        $(':input').each(function () {
+            if ($(this).val() == '') {
+                $(this).addClass('form-control-danger');
+                $(this).parent().addClass('has-danger');
+            } else {
+                $(this).removeClass('form-control-danger').addClass('form-control-success');
+                $(this).parent().removeClass('has-danger').addClass('has-success');
+            }
+        });
+    });
+    //green-red validation - END
+
 
     var $rulesCheckbox = $('#rules-checkbox');
     var $submitForm = $('#submit-form');
@@ -134,14 +148,9 @@ $(document).ready(function () {
             $fileHelp3.hide();
         }
     });
-
-
 // images - END
 
-
 //connect with languagelayer - START
-
-
     function successCallback(json) {
         var $alert = $('#alert');
         if (json.success) {
@@ -186,6 +195,26 @@ $(document).ready(function () {
     });
 
 //connect with languagelayer - END
+
+
+    //connection input phone and email fields with radio - START
+    $('#client-phone-number').focusout(function () {
+        if ($(this).val() === '') {
+            $('#optionsRadios1').attr('disabled', 'disabled');
+        } else {
+            $('#optionsRadios1').removeAttr('disabled');
+        }
+    });
+
+    $('#client-email').focusout(function () {
+        if ($(this).val() === '') {
+            $('#optionsRadios1').attr('disabled', 'disabled');
+        } else {
+            $('#optionsRadios2').removeAttr('disabled');
+        }
+    });
+
+    //connection input phone and email fields with radio - END
 
 });
 
