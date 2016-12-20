@@ -24,6 +24,34 @@ $(document).ready(function () {
             $dateOfPurchase.removeClass('form-control-danger').addClass('form-control-success');
         }
     })
+
+    var $rulesCheckbox = $('#rules-checkbox');
+    var $submitForm = $('#submit-form');
+    $rulesCheckbox.on('click', function () {
+        if (this.checked === true) {
+            $submitForm.attr('disabled', false);
+            $('#submit-form-div').removeClass('lets-animate');
+            $().removeClass('lets-animate');
+        }
+        else {
+            $submitForm.attr('disabled', true);
+            $('#submit-form-div').addClass('lets-animate');
+
+        }
+    });
+
+    $('#submit-form-div').mouseenter(function () {
+        if ($(this).hasClass('lets-animate')) {
+            $('#rules-checkbox-div')
+                .animate({
+                    opacity: '0.2'
+
+                }, 400)
+                .animate({
+                    opacity: '1'
+                }, 400);
+        }
+    });
 });
 
 

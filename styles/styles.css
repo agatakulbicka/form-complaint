@@ -15,4 +15,8 @@ label {
   #modal-window:hover {
     color: rgba(68, 157, 68, 0.7); }
 
+#submit-form-div input {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
 /*# sourceMappingURL=styles.css.map */
