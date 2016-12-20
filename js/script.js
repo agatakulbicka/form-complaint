@@ -38,8 +38,106 @@ $(document).ready(function () {
                 }, 400);
         }
     });
-});
 
+
+    // images - START
+    function readURL(input, selector) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $(selector).attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+        console.log('file type', input.files[0].type);
+    };
+
+    function deletePhoto(selector, photoValue) {
+        $(selector).on('click', function () {
+            $(this).siblings('.loaded-image').removeAttr('src');
+            $(this).siblings('.small-description').text('Zdjęcie powinno przedstawiać wadę zakupionegoproduktu,która to wada ma być podstawą reklamacji. Nie powinno przekraczać wielkości 1024 x 683 px i ma format jpg/jpeg.').show();
+            photoValue.value = '';
+            this.remove();
+        })
+    };
+
+    $("#photo-of-product1").change(function () {
+        var currentPhoto = this;
+        var $fileHelp1 = $("#fileHelp1");
+        if (currentPhoto.files[0].size > 699392 || currentPhoto.files[0].type != 'image/jpeg') {
+            currentPhoto.value = '';
+            $('#loadedImage1').removeAttr('src');
+            $fileHelp1.text('Upewnij się, że Twoje zdjęcie nie jest większe niż 1024 x 683 px i jest w formacie jpg/jpeg').show().css("background-color", "yellow");
+
+        }
+        else {
+            readURL(currentPhoto, '#loadedImage1');
+
+            $('<button>Usuń zdjęcie</button>').attr({
+                'type': 'button',
+                'id': 'deletePhoto1'
+            }).appendTo('#photo-load1');
+
+            deletePhoto('#deletePhoto1', currentPhoto);
+
+            $('#photo-load2').fadeIn(500);
+            $fileHelp1.hide();
+        }
+    });
+
+    $("#photo-of-product2").change(function () {
+        var currentPhoto = this;
+        var $fileHelp2 = $("#fileHelp2");
+        if (currentPhoto.files[0].size > 699392 || currentPhoto.files[0].type != 'image/jpeg') {
+            currentPhoto.value = '';
+
+            $('#loadedImage2').removeAttr('src');
+            $fileHelp2.text('Upewnij się, że Twoje zdjęcie nie jest większe niż 1024 x 683 px i jest w formacie jpg/jpeg').show().css("background-color", "yellow");
+
+        }
+        else {
+            readURL(currentPhoto, '#loadedImage2');
+
+            $('<button>Usuń zdjęcie</button>').attr({
+                'type': 'button',
+                'id': 'deletePhoto2'
+            }).appendTo('#photo-load2');
+
+            deletePhoto('#deletePhoto2', currentPhoto);
+
+            $('#photo-load3').fadeIn(500);
+            $fileHelp2.hide();
+        }
+    });
+
+    $("#photo-of-product3").change(function () {
+        var currentPhoto = this;
+        var $fileHelp3 = $("#fileHelp3");
+        if (currentPhoto.files[0].size > 699392 || currentPhoto.files[0].type != 'image/jpeg') {
+            currentPhoto.value = '';
+
+            $('#loadedImage3').removeAttr('src');
+            $fileHelp3.text('Upewnij się, że Twoje zdjęcie nie jest większe niż 1024 x 683 px i jest w formacie jpg/jpeg').show().css("background-color", "yellow");
+
+        }
+        else {
+            readURL(currentPhoto, '#loadedImage3');
+
+            $('<button>Usuń zdjęcie</button>').attr({
+                'type': 'button',
+                'id': 'deletePhoto3'
+            }).appendTo('#photo-load3');
+
+            deletePhoto('#deletePhoto3', currentPhoto);
+
+            $fileHelp3.hide();
+        }
+    });
+
+// images - END
+
+});
 
 //setting dates in calendar - START
 var setDate = function (date, minMaxValue) {
@@ -168,3 +266,4 @@ function initMap() {
 }
 
 //map - END
+
