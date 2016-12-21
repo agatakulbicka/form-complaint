@@ -43,6 +43,6 @@ e)	Field: ‘Preferowana forma kontaktu:’ – the client can check preferred w
 ## 6.	Field: checkbox ‘Żeby wysłać reklamację, musisz zaakceptować regulamin’ – default checked is set on false. The client must consciously confirm read the rules. While checkbox is set on false, client will not submin the form – required;
 If client clicks on the link ‘regulamin” then will display modal with rules.
 
-7.	Button: ‘Wyśli formularz’ – default this button is disabled. Only when the client will accept chcecbox (vide 5) this button won’t be disabled. When the client cliks on the button then all inputs in the form will be validated. If any input is incorrect there will be displaying information.
+##7.	Button: ‘Wyśli formularz’ – default this button is disabled. Only when the client will accept chcecbox (vide 5) this button won’t be disabled. When the client cliks on the button then all inputs in the form will be validated. If any input is incorrect there will be displaying information.
 
 
