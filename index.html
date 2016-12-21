@@ -108,8 +108,8 @@
                 </div>
 
                 <div id="map"></div>
-                <small id="mapHelp" class="form-text text-muted">Po znalezieniu miejsc na mapie, dane sklepu zostana
-                    automatycznie uzupełnione.
+                <small id="mapHelp" class="form-text text-muted">Po znalezieniu miejsc na mapie, dane sklepu zostanż
+                    automatycznie uzupełnione, ale prosimy je zweryfikować.
                 </small>
             </div>
 
@@ -134,17 +134,19 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group col-xs-12">
-                        <label for="companyPhoneNumber">Numer telefonu:</label>
+                        <label for="companyPhoneNumber">Numer telefonu komórkowego:</label>
                         <input class="form-control" type="text" value="" placeholder="+48 678 876 678"
                                id="companyPhoneNumber"
-                               pattern="\d*"
-                               maxlength="15"
+                               pattern="\+\d{2} \d{3} \d{3} \d{3}"
                                required>
+                        <small id="fileHelpCompanyNumber" class="form-text text-muted small-description">Format numeru
+                            telefonu: +48 999 999 999
+                        </small>
                     </div>
 
                     <div class="form-group col-xs-12">
                         <label for="companyWebsite">Strona internetowa:</label>
-                        <input class="form-control" type="text" value="" placeholder="http://strona.pl"
+                        <input class="form-control" type="url" value="" placeholder="http://strona.pl"
                                id="companyWebsite">
                     </div>
                 </div>
@@ -168,7 +170,9 @@
                     <div class="form-group col-xs-12">
                         <label for="client-address-house-number">Numer domu/mieszkania:</label>
                         <input class="form-control" type="text" value="" placeholder="np.67/98"
-                               id="client-address-house-number" required>
+                               id="client-address-house-number" required
+                               maxlength="8"
+                        >
                     </div>
                     <div class="form-group col-xs-12">
                         <label for="client-address-city-code">Kod pocztowy:</label>
@@ -196,9 +200,11 @@
                     <input class="form-control" type="text" value=""
                            placeholder="+48 678 876 678"
                            id="client-phone-number"
-                           pattern="\d*"
-                           maxlength="15"
+                           pattern="\+\d{2} \d{3} \d{3} \d{3}"
                     >
+                    <small id="fileHelpClientNumber" class="form-text text-muted small-description">Format numeru
+                        telefonu: +48 999 999 999
+                    </small>
                 </div>
                 <div class="form-group col-xs-12">
                     <label for="client-email">Adres email:</label>

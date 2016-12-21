@@ -11,16 +11,23 @@ $(document).ready(function () {
         }
     });
 
-    $('.form-control').on('click', function () {
-        $(':input').each(function () {
-            if ($(this).val() == '') {
-                $(this).addClass('form-control-danger');
-                $(this).parent().addClass('has-danger');
-            } else {
-                $(this).removeClass('form-control-danger').addClass('form-control-success');
-                $(this).parent().removeClass('has-danger').addClass('has-success');
-            }
-        });
+    $('#submit-form').on('click', function () {
+
+            $('.form-control').each(function () {
+                if ($(this).prop('required')) {
+                    if ($(this).val() == '') {
+                        $(this).addClass('form-control-danger');
+                        $(this).parent().addClass('has-danger');
+                    } else {
+                        $(this).removeClass('form-control-danger').addClass('form-control-success');
+                        $(this).parent().removeClass('has-danger').addClass('has-success');
+                        $('#alert').removeClass().addClass('alert alert-success').text('Dziękujemy, formularz został wysłany.')
+                            .fadeIn('slow', function () {
+                                $(this).delay(5000).fadeOut('slow');
+                            });
+                    }
+                }
+            });
     });
     //green-red validation - END
 
