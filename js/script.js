@@ -11,7 +11,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#submit-form').on('click', function () {
+    $('.form-control').on('click', function () {
         $(':input').each(function () {
             if ($(this).val() == '') {
                 $(this).addClass('form-control-danger');
@@ -152,15 +152,16 @@ $(document).ready(function () {
 
 //connect with languagelayer - START
     function successCallback(json) {
+        console.log(json);
         var $alert = $('#alert');
         if (json.success) {
             if (json.results[0].language_code === "pl") {
-                $alert.addClass('alert-success').text('Dziękujemy za poprawne wprowadzdenie opisu wady!')
+                $alert.removeClass().addClass('alert alert-success').text('Dziękujemy za poprawne wprowadzdenie opisu wady!')
                     .fadeIn('slow', function () {
                         $(this).delay(5000).fadeOut('slow');
                     });
             } else {
-                $alert.addClass('alert-info').text('Prosimy o wypełnienie tego formualrza w języku polskim.')
+                $alert.removeClass().addClass('alert alert-info').text('Prosimy o wypełnienie tego formualrza w języku polskim.')
                     .fadeIn('slow', function () {
                         $(this).delay(5000).fadeOut('slow');
                     });
@@ -168,13 +169,13 @@ $(document).ready(function () {
         }
         else {
             if (json.error.code === 210) {
-                $alert.addClass('alert-warning').text('Musisz wpisać jakiś tekst w polu "opis wady", żebyśmy mogli go zweryfikować.')
+                $alert.removeClass().addClass('alert alert-warning').text('Musisz wpisać jakiś tekst w polu "opis wady", żebyśmy mogli go zweryfikować.')
                     .fadeIn('slow', function () {
                         $(this).delay(5000).fadeOut('slow');
                     });
             }
             else {
-                $alert.addClass('alert-warning').text('Wystąpił problem z weryfikacją Twojego tekstu. Spróbuj ponownie później.')
+                $alert.removeClass().addClass('alert alert-warning').text('Wystąpił problem z weryfikacją Twojego tekstu. Spróbuj ponownie później.')
                     .fadeIn('slow', function () {
                         $(this).delay(5000).fadeOut('slow');
                     });
@@ -183,7 +184,7 @@ $(document).ready(function () {
     }
 
     function errorCallback(error) {
-        $('#alert').addClass('alert-danger').text('Wystąpił błąd połączenia (' + error.status + '). Skontaktuj się z administarorem strony.')
+        $('#alert').removeClass().addClass('alert alert-danger').text('Wystąpił błąd połączenia (' + error.status + '). Skontaktuj się z administarorem strony.')
             .fadeIn('slow', function () {
                 $(this).delay(5000).fadeOut('slow');
             });
