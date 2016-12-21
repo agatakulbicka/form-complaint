@@ -16,6 +16,17 @@ $(document).ready(function () {
         }
     });
 
+//get data from local storage
+    $('#load').on('click', function () {
+        $(':input').each(function () {
+            var id = $(this).attr('id');
+            var value = localStorage.getItem(id);
+
+            $(this).val(value);
+
+        });
+    });
+
     $('#submit-form').on('click', function () {
         var $companyNumber = $('#companyPhoneNumber');
         if (($companyNumber.val() === 'brak') || ($companyNumber.val() === '')) {

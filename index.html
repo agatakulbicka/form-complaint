@@ -17,6 +17,25 @@
         <h1>Formularz do składania reklamacji</h1>
     </div>
 
+
+    <div class="row">
+        <div class="col-xs-12">
+            <Button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                Pomocnik-Klik
+            </Button>
+
+            <div class="collapse" id="collapseExample">
+                <div class="card card-block">
+                    <label>Jeśli wprowadziłeś już jakieś dane i niechcący odświeżyłeś stronę, kliknij w button, być może
+                        udało się zapisać Twoje dane: </label>
+                    <Button id="load" class="btn btn-success btn-sm">Załaduj dane</Button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <form method="post" name="form-submit" role="submit">
         <div>
             <h3>Dane zakupioengo towaru oraz sklepu:</h3>
@@ -138,7 +157,7 @@
                         <input class="form-control" type="text" value="" placeholder="+48 678 876 678"
                                id="companyPhoneNumber"
                                pattern="\+\d{2} \d{3} \d{3} \d{3}"
-                               >
+                        >
                         <small id="fileHelpCompanyNumber" class="form-text text-muted small-description">Format numeru
                             telefonu: +48 999 999 999
                         </small>
