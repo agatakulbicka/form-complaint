@@ -9,6 +9,7 @@ $(document).ready(function () {
             $(this).parent().removeClass('has-danger').addClass('has-success');
             $(this).removeClass('form-control-danger').addClass('form-control-success');
 
+            //save to local storage
             var id = $(this).attr('id');
             var value = $(this).val();
             localStorage.setItem(id, value);
@@ -16,23 +17,28 @@ $(document).ready(function () {
     });
 
     $('#submit-form').on('click', function () {
+        var $companyNumber = $('#companyPhoneNumber');
+        if (($companyNumber.val() === 'brak') || ($companyNumber.val() === '')) {
+            $companyNumber.removeAttr('pattern');
+            console.log('element', $companyNumber);
+        }
 
-            $('.form-control').each(function () {
-                if ($(this).prop('required')) {
-                    if ($(this).val() == '') {
-                        $(this).addClass('form-control-danger');
-                        $(this).parent().addClass('has-danger');
-                    } else {
-                        $(this).removeClass('form-control-danger').addClass('form-control-success');
-                        $(this).parent().removeClass('has-danger').addClass('has-success');
-                        $('#alert').removeClass().addClass('alert alert-success').text('Dziękujemy, formularz został wysłany.')
-                            .fadeIn('slow', function () {
-                                $(this).delay(5000).fadeOut('slow');
-                            });
-                    }
+        $('.form-control').each(function () {
+
+
+            if ($(this).prop('required')) {
+                if ($(this).val() == '') {
+                    $(this).addClass('form-control-danger');
+                    $(this).parent().addClass('has-danger');
+                } else {
+                    $(this).removeClass('form-control-danger').addClass('form-control-success');
+                    $(this).parent().removeClass('has-danger').addClass('has-success');
+
                 }
-            });
+            }
+        });
     });
+
     //green-red validation - END
 
 
