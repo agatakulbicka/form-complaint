@@ -8,6 +8,10 @@ $(document).ready(function () {
         } else {
             $(this).parent().removeClass('has-danger').addClass('has-success');
             $(this).removeClass('form-control-danger').addClass('form-control-success');
+
+            var id = $(this).attr('id');
+            var value = $(this).val();
+            localStorage.setItem(id, value);
         }
     });
 
