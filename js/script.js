@@ -34,17 +34,17 @@ $(document).ready(function () {
             console.log('element', $companyNumber);
         }
 
+// updated
         $('.form-control').each(function () {
+            var $validatedInput = $(this);
 
-
-            if ($(this).prop('required')) {
-                if ($(this).val() == '') {
-                    $(this).addClass('form-control-danger');
-                    $(this).parent().addClass('has-danger');
+            if ($validatedInput.prop('required')) {
+                if ($validatedInput.val() == '') {
+                    $validatedInput.addClass('form-control-danger');
+                    $validatedInput.parent().addClass('has-danger');
                 } else {
-                    $(this).removeClass('form-control-danger').addClass('form-control-success');
-                    $(this).parent().removeClass('has-danger').addClass('has-success');
-
+                    $validatedInput.removeClass('form-control-danger').addClass('form-control-success');
+                    $validatedInput.parent().removeClass('has-danger').addClass('has-success');
                 }
             }
         });
@@ -218,9 +218,10 @@ $(document).ready(function () {
             });
     }
 
+//updated
     $('#product-description').blur(function () {
-        var query = $('#product-description').val();
-        apiConnector.getLanguage(successCallback, errorCallback, query);
+        var query = $(this).val();
+        apiConnector.getLanguage(query, successCallback, errorCallback);
     });
 
 //connect with languagelayer - END
@@ -325,15 +326,14 @@ function initMap() {
             scaledSize: new google.maps.Size(35, 35)
         }));
 
-        var automateFillInputFields = function (idSelector, data) {
+
+//updated
+        function automateFillInputFields(idSelector, data) {
             var SidSelector = $('#' + idSelector);
             if (data !== undefined) {
-                document.getElementById(idSelector).value = data;
-                SidSelector.addClass('form-control-success');
+                SidSelector.val(data).addClass('form-control-success');
                 SidSelector.parent().addClass('has-success');
-            }
-            else document.getElementById(idSelector).value = 'brak';
-
+            } else SidSelector.val('brak');
         }
 
         automateFillInputFields('companyName', place.name);
